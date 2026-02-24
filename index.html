@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>樹樺工程師工作日報表</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-decoration">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+    </div>
+
+    <div class="container">
+        <header class="form-header">
+            <div class="logo-container">
+                <div class="company-logo">
+                    <img src="logo.png" alt="樹樺電子股份有限公司 SHALARM" />
+                </div>
+            </div>
+            <div class="header-divider"></div>
+            <div class="form-title">
+                <h1>工程師工作日報表</h1>
+                <p class="subtitle">Engineer Daily Work Report</p>
+            </div>
+        </header>
+
+        <form id="workReportForm" class="work-form">
+            <!-- 姓名 -->
+            <div class="form-section">
+                <div class="section-header">
+                    <h2><span class="section-number">01</span> 工程師姓名</h2>
+                </div>
+                <div class="form-group">
+                    <div class="select-wrapper">
+                        <select id="engineerName" name="engineerName" required>
+                            <option value="">-- 請選擇工程師 --</option>
+                            <option value="林承翰">林承翰</option>
+                            <option value="陳冠宇">陳冠宇</option>
+                            <option value="周廷威">周廷威</option>
+                            <option value="沈佳叡">沈佳叡</option>
+                            <option value="許宏志">許宏志</option>
+                        </select>
+                        <div class="select-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 日期 -->
+            <div class="form-section">
+                <div class="section-header">
+                    <h2><span class="section-number">02</span> 工作日期</h2>
+                </div>
+                <div class="form-group">
+                    <input type="date" id="workDate" name="workDate" required>
+                </div>
+            </div>
+
+            <!-- 單位名稱 -->
+            <div class="form-section">
+                <div class="section-header">
+                    <h2><span class="section-number">03</span> 單位名稱</h2>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="unitName" name="unitName" placeholder="例如：台北銀行信義分行" required>
+                </div>
+            </div>
+
+            <!-- 拜訪時段 -->
+            <div class="form-section">
+                <div class="section-header">
+                    <h2><span class="section-number">04</span> 拜訪時段</h2>
+                </div>
+                <div class="form-group">
+                    <div class="visit-time-range">
+                        <div class="time-input-group">
+                            <label for="visitStartTime">開始時間</label>
+                            <input type="time" id="visitStartTime" name="visitStartTime" required>
+                        </div>
+                        <div class="time-separator">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="time-input-group">
+                            <label for="visitEndTime">結束時間</label>
+                            <input type="time" id="visitEndTime" name="visitEndTime" required>
+                        </div>
+                    </div>
+                    <div class="visit-duration-display" id="visitDurationDisplay">
+                        <span class="duration-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 6a.75.75 0 00-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 000-1.5h-3.75V6z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </span>
+                        <span class="duration-text" id="visitDuration">請輸入開始與結束時間</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 工作類別 -->
+            <div class="form-section work-category-section">
+                <div class="section-header">
+                    <h2><span class="section-number">05</span> 工作類別</h2>
+                </div>
+                <div class="form-group">
+                    <div class="category-tabs">
+                        <button type="button" class="category-tab active" data-category="engineering">
+                            <span class="tab-icon">🔧</span>
+                            <span class="tab-label">A. 工程</span>
+                        </button>
+                        <button type="button" class="category-tab" data-category="maintenance">
+                            <span class="tab-icon">🛡️</span>
+                            <span class="tab-label">B. 定保</span>
+                        </button>
+                        <button type="button" class="category-tab" data-category="repair">
+                            <span class="tab-icon">🔔</span>
+                            <span class="tab-label">C. 叫修</span>
+                        </button>
+                        <button type="button" class="category-tab" data-category="admin">
+                            <span class="tab-icon">📋</span>
+                            <span class="tab-label">D. 行政</span>
+                        </button>
+                        <button type="button" class="category-tab" data-category="business">
+                            <span class="tab-icon">💼</span>
+                            <span class="tab-label">E. 業務</span>
+                        </button>
+                    </div>
+
+                    <div class="subcategory-container">
+                        <!-- 工程 -->
+                        <div class="subcategory-group active" data-category="engineering">
+                            <div class="checkbox-grid">
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="workType" value="工程-勘場">
+                                    <div class="checkbox-content">
+                                        <span class="checkbox-mark"></span>
+                                        <span>勘場</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="workType" value="工程-裝機">
+                                    <div class="checkbox-content">
+                                        <span class="checkbox-mark"></span>
+                                        <span>裝機</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="workType" value="工程-汰換">
+                                    <div class="checkbox-content">
+                                        <span class="checkbox-mark"></span>
+                                        <span>汰換</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="workType" value="工程-移機">
+                                    <div class="checkbox-content">
+                                        <span class="checkbox-mark"></span>
+                                        <span>移機</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="workType" value="工程-線路配置">
+                                    <div class="checkbox-content">
+                                        <span class="checkbox-mark"></span>
+                                        <span>線路配置</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 定保 -->
+                        <div class="subcategory-group" data-category="maintenance">
+                            <div class="checkbox-grid">
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="workType" value="定保-監試定保">
+                                    <div class="checkbox-content">
+                                        <span class="checkbox-mark"></span>
+                                        <span>監試定保</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="workType" value="定保-ATM定保">
+                                    <div class="checkbox-content">
+                                        <span class="checkbox-mark"></span>
+                                        <span>ATM定保</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="workType" value="定保-防盜定保">
+                                    <div class="checkbox-content">
+                                        <span class="checkbox-mark"></span>
+                                        <span>防盜定保</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="workType" value="定保-金庫定保">
+                                    <div class="checkbox-content">
+                                        <span class="checkbox-mark"></span>
+                                        <span>金庫定保</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 叫修 -->
+                        <div class="subcategory-group" data-category="repair">
+                            <div class="checkbox-grid">
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="workType" value="叫修-報警查修">
+                                    <div class="checkbox-content">
+                                        <span class="checkbox-mark"></span>
+                                        <span>報警查修</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="workType" value="叫修-監試查修">
+                                    <div class="checkbox-content">
+                                        <span class="checkbox-mark"></span>
+                                        <span>監試查修</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="workType" value="叫修-按鈕查修">
+                                    <div class="checkbox-content">
+                                        <span class="checkbox-mark"></span>
+                                        <span>按鈕查修</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="workType" value="叫修-ATM查修">
+                                    <div class="checkbox-content">
+                                        <span class="checkbox-mark"></span>
+                                        <span>ATM查修</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="workType" value="叫修-監視燒錄">
+                                    <div class="checkbox-content">
+                                        <span class="checkbox-mark"></span>
+                                        <span>監視燒錄</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 行政 -->
+                        <div class="subcategory-group" data-category="admin">
+                            <div class="checkbox-grid">
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="workType" value="行政-送發票">
+                                    <div class="checkbox-content">
+                                        <span class="checkbox-mark"></span>
+                                        <span>送發票</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="workType" value="行政-收送合約">
+                                    <div class="checkbox-content">
+                                        <span class="checkbox-mark"></span>
+                                        <span>收送合約</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="workType" value="行政-補單/補章">
+                                    <div class="checkbox-content">
+                                        <span class="checkbox-mark"></span>
+                                        <span>補單/補章</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 業務 -->
+                        <div class="subcategory-group" data-category="business">
+                            <div class="checkbox-grid">
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="workType" value="業務-報價/議價">
+                                    <div class="checkbox-content">
+                                        <span class="checkbox-mark"></span>
+                                        <span>報價/議價</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="workType" value="業務-追款">
+                                    <div class="checkbox-content">
+                                        <span class="checkbox-mark"></span>
+                                        <span>追款</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 是否為定保戶 -->
+            <div class="form-section">
+                <div class="section-header">
+                    <h2><span class="section-number">06</span> 是否為定保戶</h2>
+                </div>
+                <div class="form-group">
+                    <div class="toggle-buttons">
+                        <label class="toggle-card">
+                            <input type="radio" name="isMaintenanceCustomer" value="是" required>
+                            <div class="toggle-content yes">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>是</span>
+                            </div>
+                        </label>
+                        <label class="toggle-card">
+                            <input type="radio" name="isMaintenanceCustomer" value="否" required>
+                            <div class="toggle-content no">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>否</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 詳細工作內容說明 -->
+            <div class="form-section">
+                <div class="section-header">
+                    <h2><span class="section-number">07</span> 詳細工作內容說明</h2>
+                </div>
+                <div class="form-group">
+                    <textarea id="workDescription" name="workDescription" rows="5"
+                        placeholder="請輸入詳細的工作內容說明，例如：更換了哪些設備、處理了什麼問題、與客戶的溝通內容等..." required></textarea>
+                    <div class="char-counter">
+                        <span id="charCount">0</span> / 500 字
+                    </div>
+                </div>
+            </div>
+
+            <!-- 提交按鈕 -->
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary" id="previewBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
+                        <path fill-rule="evenodd"
+                            d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    預覽資料
+                </button>
+                <button type="submit" class="btn btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+                    </svg>
+                    送出表單
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- 預覽 Modal -->
+    <div class="modal-overlay" id="previewModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>資料預覽</h3>
+                <button type="button" class="modal-close" id="closeModal">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body" id="previewContent">
+                <!-- Preview content will be inserted here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="copyDataBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M7.502 6h7.128A3.375 3.375 0 0118 9.375v9.375a3 3 0 003-3V6.108c0-1.505-1.125-2.811-2.664-2.94a48.972 48.972 0 00-8.478-.07A3.001 3.001 0 007.5 6z"
+                            clip-rule="evenodd" />
+                        <path
+                            d="M5.25 8.625c0-1.036.84-1.875 1.875-1.875h8.25c1.035 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-8.25a1.875 1.875 0 01-1.875-1.875V8.625z" />
+                    </svg>
+                    複製為 Tab 分隔格式
+                </button>
+                <button type="button" class="btn btn-primary" id="confirmSubmit">
+                    確認送出
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 成功提示 Modal -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-container success-modal">
+            <div class="success-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                        clip-rule="evenodd" />
+                </svg>
+            </div>
+            <h3>送出成功！</h3>
+            <p>您的工作日報已成功送出</p>
+            <p class="success-subtitle">資料已複製到剪貼簿，可直接貼至 Google Sheets</p>
+            <button type="button" class="btn btn-primary" id="closeSuccessModal">
+                繼續填寫新表單
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
