@@ -226,7 +226,7 @@ function showPreview(data) {
             <span class="preview-value">${data.unitName}</span>
         </div>
         <div class="preview-item">
-            <span class="preview-label">拜訪時段</span>
+            <span class="preview-label">進場時段</span>
             <span class="preview-value">${data.visitStartTime} → ${data.visitEndTime}（${data.visitDuration}）</span>
         </div>
         <div class="preview-item">

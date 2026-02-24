@@ -1243,6 +1243,8 @@ select:focus+.select-arrow {
 
     .form-group {
         gap: 10px;
+        overflow: hidden;
+        min-width: 0;
     }
 
     /* Radio group - stack vertically on mobile */
