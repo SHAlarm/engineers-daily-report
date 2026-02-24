@@ -1279,24 +1279,17 @@ select:focus+.select-arrow {
         font-size: 0.8rem;
     }
 
-    /* Category tabs - horizontal scroll */
+    /* Category tabs - wrap to show all */
     .category-tabs {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 8px;
+        flex-wrap: wrap;
         gap: 6px;
-        scrollbar-width: none;
-    }
-
-    .category-tabs::-webkit-scrollbar {
-        display: none;
     }
 
     .category-tab {
-        flex-shrink: 0;
-        padding: 10px 14px;
-        font-size: 0.85rem;
+        flex-shrink: 1;
+        padding: 8px 12px;
+        font-size: 0.82rem;
+        gap: 4px;
     }
 
     .tab-icon {
@@ -1323,15 +1316,20 @@ select:focus+.select-arrow {
     .visit-time-range {
         flex-direction: column;
         gap: 10px;
+        max-width: 100%;
+        overflow: hidden;
     }
 
     .visit-time-range .time-input-group {
         width: 100%;
         flex: none;
+        max-width: 100%;
     }
 
     .visit-time-range .time-input-group input[type="time"] {
         width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .visit-time-range .time-separator {
@@ -1344,6 +1342,11 @@ select:focus+.select-arrow {
     .visit-time-range .time-input-group label {
         font-size: 0.8rem;
         text-align: center;
+    }
+
+    .visit-duration-display {
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     /* Date input fix */
