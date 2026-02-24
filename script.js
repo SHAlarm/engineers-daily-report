@@ -183,8 +183,8 @@ function validateForm() {
     if (!data.engineerName) errors.push('請選擇工程師姓名');
     if (!data.workDate) errors.push('請選擇工作日期');
     if (!data.unitName) errors.push('請輸入單位名稱');
-    if (!data.visitStartTime) errors.push('請輸入拜訪開始時間');
-    if (!data.visitEndTime) errors.push('請輸入拜訪結束時間');
+    if (!data.visitStartTime) errors.push('請輸入進場開始時間');
+    if (!data.visitEndTime) errors.push('請輸入進場結束時間');
     if (!data.workTypes) errors.push('請至少選擇一項工作類別');
     if (!data.isMaintenanceCustomer) errors.push('請選擇是否為定保戶');
     if (!data.description) errors.push('請輸入詳細工作內容說明');
@@ -498,7 +498,7 @@ function doPost(e) {
     sheet = ss.insertSheet(data.engineerName);
     // Add headers
     sheet.appendRow([
-      '日期', '單位名稱', '拜訪開始時間', '拜訪結束時間', '拜訪時間總和',
+      '日期', '單位名稱', '進場開始時間', '進場結束時間', '進場時間總和',
       '工作類別', '是否定保戶', '工作內容說明', '提交時間'
     ]);
   }
