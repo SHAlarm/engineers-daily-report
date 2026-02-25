@@ -43,11 +43,12 @@
                     <div class="select-wrapper">
                         <select id="engineerName" name="engineerName" required>
                             <option value="">-- 請選擇工程師 --</option>
-                            <option value="林承翰">林承翰</option>
-                            <option value="陳冠宇">陳冠宇</option>
-                            <option value="周廷威">周廷威</option>
-                            <option value="沈佳叡">沈佳叡</option>
-                            <option value="許宏志">許宏志</option>
+                            <option value="林承翰">王信宗</option>
+                            <option value="陳冠宇">張正諺</option>
+                            <option value="周廷威">高瑞恩</option>
+                            <option value="沈佳叡">陳國平</option>
+                            <option value="許宏志">施慶堂</option>
+                            <option value="許宏志">吳胤銓</option>
                         </select>
                         <div class="select-arrow">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -135,13 +136,9 @@
                             <span class="tab-icon">🔔</span>
                             <span class="tab-label">C. 叫修</span>
                         </button>
-                        <button type="button" class="category-tab" data-category="admin">
-                            <span class="tab-icon">📋</span>
-                            <span class="tab-label">D. 行政</span>
-                        </button>
                         <button type="button" class="category-tab" data-category="business">
                             <span class="tab-icon">💼</span>
-                            <span class="tab-label">E. 業務</span>
+                            <span class="tab-label">D. 業務</span>
                         </button>
                     </div>
 
@@ -150,10 +147,10 @@
                         <div class="subcategory-group active" data-category="engineering">
                             <div class="checkbox-grid">
                                 <label class="checkbox-card">
-                                    <input type="checkbox" name="workType" value="工程-勘場">
+                                    <input type="checkbox" name="workType" value="工程-勘場/製圖">
                                     <div class="checkbox-content">
                                         <span class="checkbox-mark"></span>
-                                        <span>勘場</span>
+                                        <span>勘場/製圖</span>
                                     </div>
                                 </label>
                                 <label class="checkbox-card">
@@ -191,10 +188,10 @@
                         <div class="subcategory-group" data-category="maintenance">
                             <div class="checkbox-grid">
                                 <label class="checkbox-card">
-                                    <input type="checkbox" name="workType" value="定保-監試定保">
+                                    <input type="checkbox" name="workType" value="定保-監控定保">
                                     <div class="checkbox-content">
                                         <span class="checkbox-mark"></span>
-                                        <span>監試定保</span>
+                                        <span>監控定保</span>
                                     </div>
                                 </label>
                                 <label class="checkbox-card">
@@ -232,24 +229,24 @@
                                     </div>
                                 </label>
                                 <label class="checkbox-card">
-                                    <input type="checkbox" name="workType" value="叫修-監視查修">
+                                    <input type="checkbox" name="workType" value="叫修-防盜查修">
                                     <div class="checkbox-content">
                                         <span class="checkbox-mark"></span>
-                                        <span>監視查修</span>
+                                        <span>防盜查修</span>
                                     </div>
                                 </label>
                                 <label class="checkbox-card">
-                                    <input type="checkbox" name="workType" value="叫修-按鈕查修">
+                                    <input type="checkbox" name="workType" value="叫修-門禁查修">
                                     <div class="checkbox-content">
                                         <span class="checkbox-mark"></span>
-                                        <span>按鈕查修</span>
+                                        <span>門禁查修</span>
                                     </div>
                                 </label>
                                 <label class="checkbox-card">
-                                    <input type="checkbox" name="workType" value="叫修-ATM查修">
+                                    <input type="checkbox" name="workType" value="叫修-監控查修">
                                     <div class="checkbox-content">
                                         <span class="checkbox-mark"></span>
-                                        <span>ATM查修</span>
+                                        <span>監控查修</span>
                                     </div>
                                 </label>
                                 <label class="checkbox-card">
@@ -257,33 +254,6 @@
                                     <div class="checkbox-content">
                                         <span class="checkbox-mark"></span>
                                         <span>監視燒錄</span>
-                                    </div>
-                                </label>
-                            </div>
-                        </div>
-
-                        <!-- 行政 -->
-                        <div class="subcategory-group" data-category="admin">
-                            <div class="checkbox-grid">
-                                <label class="checkbox-card">
-                                    <input type="checkbox" name="workType" value="行政-送發票">
-                                    <div class="checkbox-content">
-                                        <span class="checkbox-mark"></span>
-                                        <span>送發票</span>
-                                    </div>
-                                </label>
-                                <label class="checkbox-card">
-                                    <input type="checkbox" name="workType" value="行政-收送合約">
-                                    <div class="checkbox-content">
-                                        <span class="checkbox-mark"></span>
-                                        <span>收送合約</span>
-                                    </div>
-                                </label>
-                                <label class="checkbox-card">
-                                    <input type="checkbox" name="workType" value="行政-補單/補章">
-                                    <div class="checkbox-content">
-                                        <span class="checkbox-mark"></span>
-                                        <span>補單/補章</span>
                                     </div>
                                 </label>
                             </div>
@@ -300,10 +270,31 @@
                                     </div>
                                 </label>
                                 <label class="checkbox-card">
-                                    <input type="checkbox" name="workType" value="業務-追款">
+                                    <input type="checkbox" name="workType" value="業務-收送合約">
                                     <div class="checkbox-content">
                                         <span class="checkbox-mark"></span>
-                                        <span>追款</span>
+                                        <span>收送合約</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="workType" value="業務-送發票">
+                                    <div class="checkbox-content">
+                                        <span class="checkbox-mark"></span>
+                                        <span>送發票</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="workType" value="業務-補單/補章">
+                                    <div class="checkbox-content">
+                                        <span class="checkbox-mark"></span>
+                                        <span>補單/補章</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="workType" value="業務-請款/追款">
+                                    <div class="checkbox-content">
+                                        <span class="checkbox-mark"></span>
+                                        <span>請款/追款</span>
                                     </div>
                                 </label>
                             </div>
@@ -439,4 +430,5 @@
 
 
 </html>
+
 
